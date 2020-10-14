@@ -42,6 +42,7 @@ namespace Library
             }
             return nums;
         }
+        //3
         public List<object> Array7(int[] nums)
         {
             List<object> numsList = new List<object>();
@@ -53,10 +54,8 @@ namespace Library
         {
             List<object> numsList = new List<object>();
             for (int i = nums.Length - 1; i >= 0; i--)
-            {
                 if (nums[i] % 2 == 0)
                     numsList.Add(nums[i]);
-            }
             numsList.Add("count: " + numsList.Count);
             return numsList;
         }
@@ -67,6 +66,38 @@ namespace Library
                 numsList.Add(nums[i]);
             return numsList;
         }
+        //6
+        public List<object> Array13(int[] nums)
+        {
+            List<object> numsList = new List<object>();
+            for (int i = nums.Length - 1; i >= 0; i -= 2)
+                numsList.Add(nums[i]);
+            return numsList;
+        }
+        public List<object> Array15(int[] nums)
+        {
+            List<object> numsList = new List<object>();
+            for (int i = 0; i <= (nums.Length - 1); i += 2)
+                numsList.Add(nums[i]);
+
+            for (int i = nums.Length - (1 + nums.Length % 2); i >= 0; i -= 2)
+                numsList.Add(nums[i]);
+
+            return numsList;
+        }
+        public List<object> Array17(int[] nums)
+        {
+            List<object> numsList = new List<object>();
+            for (int i = 0; i < nums.Length - nums.Length % 2; i += 2)
+            {
+                numsList.Add(nums[i]);
+                numsList.Add(nums[i + 1]);
+                numsList.Add(nums[nums.Length - (i + 1)]);
+                numsList.Add(nums[nums.Length - (i + 2)]);
+            }
+            return numsList;
+        }        
+        //9
         public void WriteDownLineOfShit(List<object> things)
         {
             foreach (object a in things)

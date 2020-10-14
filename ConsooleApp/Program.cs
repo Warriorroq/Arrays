@@ -10,16 +10,19 @@ namespace ConsooleApp
     {
         static void Main(string[] args)
         {
-            int[] nums = {8,4,2,1,5,6,8,4};
-            List<object> a = Array11(nums,2);
+            int[] nums = {3,4,2,1,5,6,8,6};
+            List<object> a = Array19(nums);
             WriteDownLineOfShit(a);
             Console.ReadKey();
         }
-        static List<object> Array11(int[] nums,int K)
+        static List<object> Array19(int[] nums)
         {
             List<object> numsList = new List<object>();
-            for(int i = K - 1;i <= (nums.Length - 1);i+=K)
-                numsList.Add(nums[i]);
+            for (int i = 1; i < nums.Length - 1; i++)
+                if (nums[i] > nums[0] && nums[i] < nums[nums.Length - 1])
+                    numsList.Add(nums[i]);
+            if (numsList.Count == 0)
+                numsList.Add(0);
             return numsList;
         }
         static void WriteDownLineOfShit(List<object> things)
