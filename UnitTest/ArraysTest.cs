@@ -27,9 +27,9 @@ namespace UnitTest
         [TestMethod]
         public void TestMethodArray13()
         {
-            int[] massive = { 1, 2, 4, 8 };
+            int[] massive = { 1, 2, 4, 8 ,10};
             List<object> result = new List<object>();
-            result.AddRange(new object[] { 8, 4, 2, 1 });
+            result.AddRange(new object[] {10, 4, 1 });
             Assert.AreEqual(result, arrays.Array13(massive));
         }
     }
