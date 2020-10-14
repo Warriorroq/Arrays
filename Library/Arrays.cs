@@ -159,17 +159,17 @@ namespace Library
         }
         //15
 
-        public void WriteDownLineOfShit(List<object> things)
+        public void WriteDown(List<object> things)
         {
             foreach (object a in things)
-                WriteDownLineOfShit(a);
+                WriteDown(a);
         }
-        public void WriteDownLineOfShit(object[] things)
+        public void WriteDown(object[] things)
         {
             foreach (object a in things)
-                WriteDownLineOfShit(a);
+                WriteDown(a);
         }
-        public void WriteDownLineOfShit(object things)
+        public void WriteDown(object things)
         {
             Console.Write(things + " ");
         }
