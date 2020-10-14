@@ -8,7 +8,7 @@ namespace Library
 {
     public class Arrays
     {
-        static List<object> Array1(int N)
+        public List<object> Array1(int N)
         {
             List<object> array = new List<object>();
             int num = 1;
@@ -42,7 +42,37 @@ namespace Library
             }
             return nums;
         }
+        public List<object> Array7(int[] nums)
+        {
+            List<object> numsList = new List<object>();
+            for (int i = nums.Length - 1; i >= 0; i--)
+                numsList.Add(nums[i]);
+            return numsList;
+        }
+        public List<object> Array9(int[] nums)
+        {
+            List<object> numsList = new List<object>();
+            for (int i = nums.Length - 1; i >= 0; i--)
+            {
+                if (nums[i] % 2 == 0)
+                    numsList.Add(nums[i]);
+            }
+            numsList.Add("count: " + numsList.Count);
+            return numsList;
+        }
+        public List<object> Array11(int[] nums, int K)
+        {
+            List<object> numsList = new List<object>();
+            for (int i = K - 1; i <= (nums.Length - 1); i += K)
+                numsList.Add(nums[i]);
+            return numsList;
+        }
         public void WriteDownLineOfShit(List<object> things)
+        {
+            foreach (object a in things)
+                Console.Write(a + " ");
+        }
+        public void WriteDownLineOfShit(object[] things)
         {
             foreach (object a in things)
                 Console.Write(a + " ");
