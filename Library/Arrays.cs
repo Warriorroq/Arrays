@@ -96,17 +96,90 @@ namespace Library
                 numsList.Add(nums[nums.Length - (i + 2)]);
             }
             return numsList;
-        }        
+        }
         //9
+        public List<object> Array19(int[] nums)
+        {
+            List<object> numsList = new List<object>();
+            for (int i = 1; i < nums.Length - 1; i++)
+                if (nums[i] > nums[0] && nums[i] < nums[nums.Length - 1])
+                    numsList.Add(nums[i]);
+            if (numsList.Count == 0)
+                numsList.Add(0);
+            return numsList;
+        }
+        public float Array21(int[] nums, int k, int l)
+        {
+            float sum = 0;
+            for (int i = k - 1; i <= l - 1; i++)
+                sum += nums[i];
+            sum /= (l - k + 1);
+            return sum;
+        }
+        public float Array23(int[] nums, int K, int L)
+        {
+            float sum = 0;
+            for (int i = 0; i < K - 1; i++)
+                sum += nums[i];
+            for (int i = L - 1; i < nums.Length - 1; i++)
+                sum += nums[i];
+            sum /= nums.Length - (L - K + 1);
+            return sum;
+        }
+        //12
+        public float Array25(float[] nums)
+        {
+            float q = nums[1] / nums[0];
+            for (int i = 0; i < nums.Length - 2; i++)
+                if (nums[i + 1] / nums[i] != q)
+                    q = 0;
+            return q;
+        }
+        public List<object> Array27(int[] nums)
+        {
+            List<object> numsList = new List<object>();
+            for (int i = 0; i < nums.Length - 1; i++)
+            {
+                if (nums[i] < 0 && nums[i + 1] < 0)
+                {
+                    numsList.Add(" number: " + nums[i + 1]);
+                    numsList.Add(" index: " + (i + 2));
+                    i = nums.Length;
+                }
+                else if (nums[i] > 0 && nums[i + 1] > 0)
+                {
+                    numsList.Add(" number: " + nums[i + 1]);
+                    numsList.Add(" index: " + (i + 2));
+                    i = nums.Length;
+                }
+            }
+            if (numsList.Count == 0)
+                numsList.Add(0);
+            return numsList;
+        }
+        public List<object> Array29(int[] nums)
+        {
+            List<object> numsList = new List<object>();
+            for (int i = 0; i <= (nums.Length - 1); i += 2)
+                numsList.Add(nums[i]);
+            numsList.Sort();
+            numsList[numsList.Count - 1] = "Biggest: " + numsList[numsList.Count - 1];
+            return numsList;
+        }
+
         public void WriteDownLineOfShit(List<object> things)
         {
             foreach (object a in things)
-                Console.Write(a + " ");
+                WriteDownLineOfShit(a);
         }
         public void WriteDownLineOfShit(object[] things)
         {
             foreach (object a in things)
-                Console.Write(a + " ");
+                WriteDownLineOfShit(a);
+        }
+        public void WriteDownLineOfShit(object things)
+        {
+            Console.Write(things + " ");
         }
     }
 }
